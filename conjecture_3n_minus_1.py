@@ -76,7 +76,7 @@ def create_graph(n, sequence, output_dir="conjecture_graphs"):
     plt.grid(True, alpha=0.3, linestyle='--')
     
     # Use logarithmic scale if values vary widely
-    if max(sequence) / min(sequence) > 100:
+    if max(sequence) > 0 and min(sequence) > 0 and max(sequence) / min(sequence) > 100:
         plt.yscale('log')
         plt.ylabel('Value (log scale)', fontsize=12)
     

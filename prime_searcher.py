@@ -7,6 +7,7 @@ Saves prime numbers to primes.txt with an intuitive progress bar.
 """
 
 import sys
+import math
 from tqdm import tqdm
 
 
@@ -35,7 +36,7 @@ def sieve_of_eratosthenes(start, end):
     is_prime[0] = is_prime[1] = False
     
     # Sieve of Eratosthenes with progress bar
-    sqrt_end = int(end ** 0.5) + 1
+    sqrt_end = int(math.sqrt(end)) + 1
     
     with tqdm(total=sqrt_end-2, desc="Sieving", unit="num", leave=False) as pbar:
         for i in range(2, sqrt_end):
